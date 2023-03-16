@@ -82,78 +82,67 @@
                     const choices = ['rock', 'paper', 'scissors'];
                     const randomChoice = Math.floor(Math.random() * 3);
                     return choices[randomChoice];
+                    
+
                 }
 
-                // PRINT THE CHOICE OF THE PLAYER
-                if (rock) {
-                    rock.addEventListener('click', () => {
-                        console.log('rock');
-                        const computer = computerChoice();
-                        console.log(computer);
-                    });
-                }
-                if (paper) {
-                    paper.addEventListener('click', () => {
-                        console.log('paper');
-                        const computer = computerChoice();
-                        console.log(computer);
-                    });
-                }
-                if (scissors) {
-                    scissors.addEventListener('click', () => {
-                        console.log('scissors');
-                        const computer = computerChoice();
-                        console.log(computer);
-                    });
-                }
+                // play the game
 
-                // compare the choices 
+                // compare the choices
+
                 if (rock) {
                     rock.addEventListener('click', () => {
                         const computer = computerChoice();
+                    
+                        console.log(computer, '= le choix de lordinateur');
+                        
                         if (computer === 'rock') {
+                            document.querySelector('[name="result"]').innerHTML = 'Draw';
                             console.log('draw');
-                            document.querySelector('[name="result"]').innerHTML = 'draw';
                         } else if (computer === 'paper') {
-                            console.log('computer wins');
-                            document.querySelector('[name="result"]').innerHTML = 'computer wins';
+                            document.querySelector('[name="result"]').innerHTML = 'You lose';
+                            console.log('lose');
                         } else {
-                            console.log('player wins');
-                            document.querySelector('[name="result"]').innerHTML = 'player wins';
+                            document.querySelector('[name="result"]').innerHTML = 'You win';
+                            console.log('win');
                         }
                     });
                 }
+
                 if (paper) {
                     paper.addEventListener('click', () => {
                         const computer = computerChoice();
+                        console.log(computer, '= le choix de lordinateur');
                         if (computer === 'rock') {
-                            console.log('player wins');
-                            document.querySelector('[name="result"]').innerHTML = 'player wins';
+                            document.querySelector('[name="result"]').innerHTML = 'You win';
+                            console.log('win');
                         } else if (computer === 'paper') {
+                            document.querySelector('[name="result"]').innerHTML = 'Draw';
                             console.log('draw');
-                            document.querySelector('[name="result"]').innerHTML = 'draw';
                         } else {
-                            console.log('computer wins');
-                            document.querySelector('[name="result"]').innerHTML = 'computer wins';
+                            document.querySelector('[name="result"]').innerHTML = 'You lose';
+                            console.log('lose');
                         }
                     });
                 }
-                if (scissors) {
+
+                if(scissors){
                     scissors.addEventListener('click', () => {
                         const computer = computerChoice();
+                        console.log(computer, '= le choix de lordinateur');
                         if (computer === 'rock') {
-                            console.log('computer wins');
-                            document.querySelector('[name="result"]').innerHTML = 'computer wins';
+                            document.querySelector('[name="result"]').innerHTML = 'You lose';
+                            console.log('lose');
                         } else if (computer === 'paper') {
-                            console.log('player wins');
-                            document.querySelector('[name="result"]').innerHTML = 'player wins';
-
+                            document.querySelector('[name="result"]').innerHTML = 'You win';
+                            console.log('win');
                         } else {
+                            document.querySelector('[name="result"]').innerHTML = 'Draw';
                             console.log('draw');
-                            document.querySelector('[name="result"]').innerHTML = 'draw';
                         }
                     });
                 }
+
 
                 // clear the result after click on the button replay
                 const replay = document.querySelector('[name="replay"]');
